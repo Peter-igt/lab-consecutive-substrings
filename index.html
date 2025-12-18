@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Substrings Generator</title>
+</head>
+<body>
+
+  <h1>Consecutive Substrings</h1>
+
+  <p>Type a word and click Generate:</p>
+
+  <input type="text" id="word" placeholder="Enter a word">
+  <button onclick="showSubstrings()">Generate</button>
+
+  <div id="output"></div>
+
+  <script>
+    function showSubstrings() {
+      let word = document.getElementById("word").value;
+      let output = "";
+
+      for (let i = 0; i < word.length; i++) {
+        for (let j = i + 1; j <= word.length; j++) {
+          output += word.slice(i, j) + "<br>";
+        }
+      }
+
+      document.getElementById("output").innerHTML = output;
+    }
+  </script>
+
+</body>
+</html>
